@@ -1,21 +1,48 @@
-
+const ctrl = require('../controllers/authCtrl')
 
 
 module.exports = {
-    login:(req, res)=>{
+    login: async (req, res)=>{
+        const {email, password} = req.body
+        try {
+            const aux = await ctrl.login(email,password)
+            res.json(aux)
+        } catch (error) {
+            res.json({message:error.message})
+        }
         
-        res.send(`nos logeamos`)
     },
-    register:(req, res)=>{
-        res.send('creamos user')
+    register:async(req, res)=>{
+        const {username,email, password} = req.body
+        try {
+            const aux = await ctrl.register(username,email,password)
+            res.json(aux)
+        } catch (error) {
+            res.json({message:error.message})
+        }
     },
-    logout:(req, res)=>{
-        res.send('salimos')
+    logout:async(req, res)=>{
+        try {
+            const aux = await ctrl.logout()
+            res.json(aux)
+        } catch (error) {
+            res.json({message:error.message})
+        }
     },
-    profile:(req, res)=>{
-        res.send('vemos perfil')
+    profile:async(req, res)=>{
+        try {
+            const aux = await ctrl.profile()
+            res.json(aux)
+        } catch (error) {
+            res.json({message:error.message})
+        }
     },
-    verifyToken:(req, res)=>{
-        res.send('verificamos toquen')
+    verifyToken:async(req, res)=>{
+        try {
+            const aux = await ctrl.verifyToken()
+            res.json(aux)
+        } catch (error) {
+            res.json({message:error.message})
+        }
     },
 }

@@ -32,3 +32,23 @@ npm install bcryptjs cookie-parser cors dotenv express jsonwebtoken morgan nodem
 - [Sequelize](https://www.npmjs.com/package/sequelize) //es un ORM para Nodejs que nos permite manipular varias bases de datos SQL de una manera bastante sencilla, entre estas bases de datos podemos encontrar: mysql, sqlite, postgres, mssql
 - [pg](https://www.npmjs.com/package/pg) // Sequelize proporciona la funcionalidad ORM y la interfaz para interactuar con tu base de datos, mientras que el paquete pg proporciona la conexión a la base de datos PostgreSQL y las funciones necesarias para ejecutar las consultas SQL generadas por Sequelize.
 - [pg-hstore](https://www.npmjs.com/package/pg-hstore)
+
+
+#### Login POST: `http://localhost:3001/api/auth/login`
+```
+{  
+"email":"pepe",
+"password":"123"
+}
+```
+#### Register POST: `http://localhost:3001/api/auth/register`
+```
+{  
+"email":"pepe",
+"password":"123",
+"username":"username de pepe"
+}
+```
+#### Cerrar seccion POST: `http://localhost:3001/api/auth/logout`
+#### Perfil GET: `http://localhost:3001/api/auth/profile`
+#### Verify token GET: `http://localhost:3001/api/auth/verify`

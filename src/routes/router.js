@@ -3,7 +3,7 @@ const route = Router()
 
 
 
-route.use('/user', require('./user.routes') )
+route.use('/auth', require('./user.routes') )
 
 
 module.exports = route;
